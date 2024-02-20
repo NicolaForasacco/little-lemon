@@ -8,26 +8,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview;
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun Home (){
-        Column {
-            Image(
-                painter = painterResource(id = R.drawable.Logo),
-                contentDescription = "Logo",
-                modifier = Modifier.fillMaxWidth(),
-                contentScale = ContentScale.FillWidth
-            )
-
-
-            /*TopAppBar()
-            UpperPanel()
-            LowerPanel(navController, DishRepository.dishes)*/
-        }
+fun Home (navController: NavHostController){
+    Column {
+        TopAppBar(navController = navController)
+        HeroSection()
+    }
 }
 
 @Composable
 @Preview
 fun HomeScreenPreview(){
-        Home();
-        }
+    Home(navController = rememberNavController());
+}

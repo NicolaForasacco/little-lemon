@@ -60,6 +60,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.room:room-common:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -67,4 +69,11 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation("io.ktor:ktor-client-core:2.1.3")
+    implementation( "io.ktor:ktor-client-android:2.1.3")
+    implementation( "io.ktor:ktor-client-content-negotiation:2.1.3")
+    implementation( "io.ktor:ktor-serialization-kotlinx-json:2.1.3")
+
+    implementation("com.github.bumptech.glide:compose:1.0.0-alpha.1")
 }
