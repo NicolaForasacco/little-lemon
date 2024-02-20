@@ -1,5 +1,8 @@
 package com.example.littlelemon
 
+import android.content.Context
+import android.content.SharedPreferences
+import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,9 +24,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.edit
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import kotlin.coroutines.coroutineContext
 
 @Composable
-fun Onboarding() {
+fun Onboarding(navController: NavHostController,
+               sharedPreferences: SharedPreferences?) {
+
     var firstName by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -56,7 +65,21 @@ fun Onboarding() {
         )
 
         Button(
-            onClick = { }
+            onClick = {
+
+                if(!email.isBlank()
+                    && !firstName.isBlank()
+                    && !lastName.isBlank()){
+
+                    sharedPreferences?.edit(commit = true) {
+                        putString("email", email);
+                        putString("firstName", firstName);
+                        putString("lastName", lastName);
+                    }
+
+                    navController?.navigate(Home.route);
+                }
+            }
         ) {
             Text("Register")
         }
@@ -66,5 +89,5 @@ fun Onboarding() {
 @Preview(showBackground = true)
 @Composable
 fun OnboardingPreview() {
-    Onboarding()
+    Onboarding(navController = rememberNavController(), null)
 }
