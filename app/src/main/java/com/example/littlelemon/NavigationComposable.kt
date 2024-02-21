@@ -7,7 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 
 @Composable
-fun NavigationComposable(navController: NavHostController, sharedPreferences: SharedPreferences) {
+fun NavigationComposable(navController: NavHostController,
+                         sharedPreferences: SharedPreferences,
+                         database: MenuDatabase) {
 
     NavHost(navController = navController,
             startDestination = if (sharedPreferences.getString("email","").isNullOrEmpty())
@@ -16,7 +18,7 @@ fun NavigationComposable(navController: NavHostController, sharedPreferences: Sh
                                     Home.route)
     {
         composable(Home.route) {
-            Home()
+            Home(navController, database)
         }
         composable(Onboarding.route)
         {
@@ -24,7 +26,7 @@ fun NavigationComposable(navController: NavHostController, sharedPreferences: Sh
         }
         composable(Profile.route)
         {
-            Profile()
+            Profile(navController, sharedPreferences)
         }
     }
 }

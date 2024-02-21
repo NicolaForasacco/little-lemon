@@ -7,14 +7,13 @@ class Network {
 }
 
 @Serializable
-@SerialName(value = "")
+@SerialName(value = "Menu")
 class MenuNetworkdata(
     val menu: List<MenuItemNetwork>
 )
 
 
 @Serializable
-@SerialName(value = "")
 class  MenuItemNetwork (
     val id: Int,
     val title: String,

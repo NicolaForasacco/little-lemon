@@ -11,9 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavType
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.room.Room
 import com.example.littlelemon.ui.theme.LittleLemonTheme
@@ -78,8 +75,6 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-
-
         setContent {
             val navController = rememberNavController()
 
@@ -89,7 +84,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    NavigationComposable(navController = navController, sharedPreferences)
+                    NavigationComposable(navController = navController,
+                                        sharedPreferences,
+                                        database)
                 }
             }
         }

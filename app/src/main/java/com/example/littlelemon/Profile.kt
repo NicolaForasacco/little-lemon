@@ -24,7 +24,7 @@ fun Profile (navController: NavHostController,
     Column {
 
         Image(
-            painter = painterResource(id = R.drawable.Logo),
+            painter = painterResource(id = R.drawable.logo),
             contentDescription = "Logo",
             modifier = Modifier.fillMaxWidth(),
             contentScale = ContentScale.FillWidth

@@ -23,7 +23,7 @@ fun TopAppBar(navController: NavHostController) {
         verticalAlignment = Alignment.CenterVertically) {
 
         Image(
-            painter = painterResource(id = R.drawable.Logo),
+            painter = painterResource(id = R.drawable.logo),
             contentDescription = "Little Lemon Logo",
             modifier = Modifier.fillMaxWidth(0.5F)
                 .padding(horizontal = 20.dp)
@@ -31,7 +31,7 @@ fun TopAppBar(navController: NavHostController) {
 
         IconButton(onClick = { navController.navigate(Profile.route) }) {
             Image(
-                painter = painterResource(id = R.drawable.Profile),
+                painter = painterResource(id = R.drawable.profile),
                 contentDescription = "Profile",
                 modifier = Modifier.size(24.dp)
             )
