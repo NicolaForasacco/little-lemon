@@ -1,10 +1,7 @@
-package com.example.littlelemon
+package com.example.littlelemon.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-
-class Network {
-}
 
 @Serializable
 @SerialName(value = "Menu")

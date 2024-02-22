@@ -13,6 +13,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
 import androidx.room.Room
+import com.example.littlelemon.data.MenuDatabase
+import com.example.littlelemon.data.MenuItem
+import com.example.littlelemon.network.MenuItemNetwork
+import com.example.littlelemon.network.MenuNetworkdata
 import com.example.littlelemon.ui.theme.LittleLemonTheme
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
